@@ -1,0 +1,20 @@
+class Solution {
+    public int reverser(int n){
+        long rev = 0;
+        while(n>0){
+            long rem = n%10;
+            rev = rem+rev*(long)10;
+            n =  n/10;
+            if(rev>Integer.MAX_VALUE || rev<Integer.MIN_VALUE) return 0;
+        }
+        return (int)rev;
+    }
+    public int reverse(int x) {
+       if(x>0){
+        return reverser(x);
+       }
+       else{
+        return -1*reverser(x*-1);
+       }
+    }
+}
